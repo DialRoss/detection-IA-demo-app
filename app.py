@@ -8,8 +8,9 @@ from PIL import Image
 import io
 import time
 import os
-import subprocess
-import sys
+
+# --- SYSTÈME DE MOT DE PASSE ---
+# (Ton code de mot de passe ici...)
 
 # --- FIX OPENCV FOR STREAMLIT CLOUD ---
 # Force la désinstallation de la version graphique qui fait planter, et installe la version serveur
