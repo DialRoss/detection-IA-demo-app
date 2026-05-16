@@ -3,6 +3,5 @@ ultralytics>=8.2.0
 numpy>=1.26.0,<2.0.0
 pandas>=2.0.3
 opencv-python-headless
-opencv-python==100.0.0  # Cette version fausse empêche uv d'installer la version graphique
 plotly>=5.17.0
 Pillow>=10.0.0
