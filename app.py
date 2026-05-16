@@ -8,9 +8,23 @@ from PIL import Image
 import io
 import time
 import os
+import subprocess
+import sys
 
+# --- FIX OPENCV FOR STREAMLIT CLOUD ---
+# Force la désinstallation de la version graphique qui fait planter, et installe la version serveur
+try:
+    import cv2
+    if "headless" not in cv2.__file__:
+        subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python"])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
+# --- END FIX ---
 
-import streamlit as st
+import numpy as np
+import pandas as pd
+# ... la suite de ton code (import plotly, etc.)
 
 # --- SYSTÈME DE MOT DE PASSE ---
 def check_password():
