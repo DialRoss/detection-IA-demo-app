@@ -1,31 +1,16 @@
+import os
+os.environ["YOLO_CONFIG_DIR"] = "/tmp/Ultralytics"
+
 import streamlit as st
 import numpy as np
 import pandas as pd
 import cv2
 import plotly.graph_objects as go
-from ultralytics import YOLO
-from PIL import Image
 import io
 import time
-import os
 
-# --- SYSTÈME DE MOT DE PASSE ---
-# (Ton code de mot de passe ici...)
+from ultralytics import YOLO
 
-# --- FIX OPENCV FOR STREAMLIT CLOUD ---
-# Force la désinstallation de la version graphique qui fait planter, et installe la version serveur
-try:
-    import cv2
-    if "headless" not in cv2.__file__:
-        subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python"])
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
-# --- END FIX ---
-
-import numpy as np
-import pandas as pd
-# ... la suite de ton code (import plotly, etc.)
 
 # --- SYSTÈME DE MOT DE PASSE ---
 def check_password():
