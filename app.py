@@ -15,7 +15,7 @@ from ultralytics import YOLO
 # --- SYSTÈME DE MOT DE PASSE ---
 def check_password():
     def password_entered():
-        if st.session_state["password"] == st.secrets.get("password", "RailwayAI2026!"):
+        if st.session_state["password"] == st.secrets.get("password", "RailwayAI2026"):
             st.session_state["password_correct"] = True
             del st.session_state["password"]  # Ne pas stocker le mot de passe
         else:
