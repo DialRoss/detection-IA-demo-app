@@ -513,7 +513,7 @@ if uploaded_data is not None:
                     st.image(
                         img,
                         caption=f"Window starting at {pos} mm",
-                        width=400
+                        width=640
                     )
             else:
                 st.info(
