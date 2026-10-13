@@ -337,7 +337,18 @@ if uploaded_data is not None:
             
             # Afficher les 3 meilleures images
             for pos, img in tt_images[:3]:
-                st.image(img, caption=f"Fenêtre démarrant à {pos} mm", use_column_width="auto")
+                st.image(img, caption=f"Window starting at {pos} mm", width="stretch")
+
+       if tt_images_with_boxes:
+           for pos, img in tt_images_with_boxes[:5]:
+               st.image(
+                   img,
+                   caption=f"Window starting at {pos} mm",
+                   width="stretch"
+               )
+       else:
+           st.info("No TT image with prediction for this file. Try lowering the confidence threshold.")
+            
 
             # --- Visualisation 2 : Graphique 1D ---
             st.subheader("📈 Localisation sur le signal 1D réel")
